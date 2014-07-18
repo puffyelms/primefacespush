@@ -24,7 +24,7 @@ public class AdminManagedBean implements Serializable{
 	public void sendMessage(ActionEvent event) {
 		PushContext pushContext = PushContextFactory.getDefault().getPushContext();
 		pushContext.push("/notification", message);
-		System.out.println("message="+message);
+		System.out.println("message sent="+message);
 	}
 	
 	public String getMessage() {
