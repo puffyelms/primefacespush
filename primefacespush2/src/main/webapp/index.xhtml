@@ -1,0 +1,33 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	
+<h:head>
+<title>Receiver</title>
+</h:head>
+
+<script type="text/javascript">
+
+	function handleMessage(data) {
+		
+		showMessage([{name:'msg',value:data}]);
+		
+	}
+
+</script>
+	
+<h:body>
+
+	<h:form id="formReceiver">
+		
+		<p:growl autoUpdate="false" sticky="true" id="outMessage"
+			showDetail="true"></p:growl>
+			
+		<p:remoteCommand name="showMessage" actionListener="#{rBean.receiveMessage}" update="formReceiver"></p:remoteCommand>
+	</h:form>	
+	
+	<p:socket channel="/notification" onMessage="handleMessage"></p:socket>
+	
+</h:body>
+</html>

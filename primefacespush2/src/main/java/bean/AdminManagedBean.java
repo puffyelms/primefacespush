@@ -23,7 +23,7 @@ public class AdminManagedBean implements Serializable{
 	
 	public void sendMessage(ActionEvent event) {
 		PushContext pushContext = PushContextFactory.getDefault().getPushContext();
-		for (int i = 0; i < 100; i++) {
+		for (int i = 0; i < 5; i++) {
 			try {
 				Thread.sleep(500);
 			} catch (InterruptedException e) {
