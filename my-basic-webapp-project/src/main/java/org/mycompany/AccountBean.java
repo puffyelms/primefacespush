@@ -17,7 +17,9 @@ import java.util.HashMap;
 @SessionScoped
 public class AccountBean implements Serializable {
 
-  private String name;
+private static final long serialVersionUID = -8414324558403013783L;
+
+private String name;
   
   private float amount;
   
